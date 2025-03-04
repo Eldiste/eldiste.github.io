@@ -5,6 +5,34 @@ import ProjectCard from './ProjectCard';
 const Projects = () => {
   const projects = [
     {
+      title: 'AREA',
+      description: "A web-based automation platform inspired by IFTTT/Zapier, built with FastAPI, Redis, and PostgreSQL. Features integrations with GitHub, Microsoft, Google, and Spotify services, enabling users to create custom automation workflows through Actions, Reactions, and Triggers.",
+      image: '/area.png',
+      technologies: ['FastAPI', 'Redis', 'PostgreSQL', 'Docker', 'Flutter', 'Python'],
+      link: 'https://github.com/eldiste/AREA'
+    },
+    {
+      title: 'Zappy',
+      description: "A multiplayer game featuring AI-controlled players competing for resources on a virtual planet. Built with a client-server architecture, real-time visualization, and strategic AI decision-making algorithms.",
+      image: '/zappy.png',
+      technologies: ['C', 'C++', 'SFML', 'AI', 'Networking'],
+      link: 'https://github.com/eldiste/ZAPPY'
+    },
+    {
+      title: 'R-Type',
+      description: "A recreation of the classic R-Type shoot 'em up game with a custom-built networked game engine. Features cross-platform multiplayer, SFML-based rendering, modular architecture, and customizable settings for resolution and FPS.",
+      image: '/rtype.png',
+      technologies: ['C++', 'SFML', 'CMake', 'Game Development', 'Networking'],
+      link: 'https://github.com/eldiste/R-Type'
+    },
+    {
+      title: 'Neural Network Chess Analyzer',
+      description: "A sophisticated neural network implementation built from scratch to analyze chess positions and classify them into different states (checkmate, check, stalemate, or normal position). Features custom network architecture, flexible configuration, and comprehensive training pipeline.",
+      image: '/neural_network.png',
+      technologies: ['Python', 'Neural Networks', 'Machine Learning', 'Chess Analysis'],
+      link: 'https://github.com/eldiste/Neural-Network'
+    },
+    {
       title: '42sh',
       description: "A Unix command interpreter developed in C, featuring process management, pipes, and current directory management. This project demonstrates advanced system programming concepts.",
       image: '/42sh.png',
@@ -17,15 +45,7 @@ const Projects = () => {
       image: '/my_rpg.png',
       technologies: ['C', 'CSFML', 'Game Development'],
       link: 'https://github.com/eldiste/my_rpg'
-    },
-    {
-      title: 'Dante',
-      description: "A real-time mapping system utilizing pathfinding principles and maze generation algorithms. This project showcases algorithmic problem-solving and efficient solution design.",
-      image: '/dante.png',
-      technologies: ['C', 'Algorithms', 'Data Structures'],
-      link: 'https://github.com/eldiste/dante'
-    },
-    // Add more projects as needed
+    }
   ];
 
   const containerVariants = {

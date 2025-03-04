@@ -5,7 +5,7 @@ const About = () => {
   const skills = [
     { 
       category: 'Programming Languages', 
-      items: ['C', 'C++', 'Python', 'JavaScript', 'TypeScript'] 
+      items: ['C', 'C++', 'Python', 'JavaScript', 'MySQL'] 
     },
     { 
       category: 'Web & Mobile Development', 
