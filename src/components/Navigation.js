@@ -84,7 +84,6 @@ const Navigation = () => {
                     {item.name}
                   </Link>
                 ))}
-                <LanguageSwitcher />
                 <button
                   onClick={() => setTheme(isDark ? 'light' : 'dark')}
                   className="p-2 rounded-full hover:bg-gray-100/80 dark:hover:bg-gray-800/80 transition-colors duration-150"
@@ -95,6 +94,7 @@ const Navigation = () => {
                     <MoonIcon className="h-5 w-5 text-gray-800 transition-colors duration-150" />
                   )}
                 </button>
+                <LanguageSwitcher />
               </div>
             </div>
 
@@ -155,9 +155,6 @@ const Navigation = () => {
                       {item.name}
                     </Link>
                   ))}
-                  <div className="px-4 py-3">
-                    <LanguageSwitcher />
-                  </div>
                   <button
                     onClick={() => {
                       setTheme(isDark ? 'light' : 'dark');
@@ -177,6 +174,9 @@ const Navigation = () => {
                       </>
                     )}
                   </button>
+                  <div className="px-4 py-3">
+                    <LanguageSwitcher />
+                  </div>
                 </div>
               </div>
             </motion.div>
