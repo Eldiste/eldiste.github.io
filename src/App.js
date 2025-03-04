@@ -9,7 +9,11 @@ import './App.css';
 
 function App() {
   return (
-    <ThemeProvider attribute="class">
+    <ThemeProvider 
+      attribute="class" 
+      defaultTheme="system"
+      enableSystem={true}
+    >
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-200">
         <Navigation />
         <main>

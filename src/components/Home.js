@@ -4,7 +4,8 @@ import { Link } from 'react-scroll';
 import { useTheme } from 'next-themes';
 
 const Home = () => {
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
+  const isDark = resolvedTheme === 'dark';
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
@@ -50,7 +51,7 @@ const Home = () => {
             transition={{ duration: 0.2 }}
           >
             <img
-              src={theme === 'dark' ? '/IMG_0957.png' : '/img.png'}
+              src={isDark ? '/IMG_0957.png' : '/img.png'}
               alt="Profile"
               className="w-full h-full object-cover"
             />

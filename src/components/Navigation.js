@@ -7,7 +7,7 @@ import { SunIcon, MoonIcon } from '@heroicons/react/24/outline';
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -27,6 +27,8 @@ const Navigation = () => {
   ];
 
   if (!mounted) return null;
+
+  const isDark = resolvedTheme === 'dark';
 
   return (
     <>
@@ -56,7 +58,7 @@ const Navigation = () => {
               >
                 <div className="w-8 h-8 rounded-full overflow-hidden ring-2 ring-gray-200 dark:ring-gray-700 transition-colors duration-150">
                   <img
-                    src={theme === 'dark' ? '/IMG_0957.png' : '/img.png'}
+                    src={isDark ? '/IMG_0957.png' : '/img.png'}
                     alt="Profile"
                     className="w-full h-full object-cover"
                   />
@@ -80,10 +82,10 @@ const Navigation = () => {
                   </Link>
                 ))}
                 <button
-                  onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                  onClick={() => setTheme(isDark ? 'light' : 'dark')}
                   className="p-2 rounded-full hover:bg-gray-100/80 dark:hover:bg-gray-800/80 transition-colors duration-150"
                 >
-                  {theme === 'dark' ? (
+                  {isDark ? (
                     <SunIcon className="h-5 w-5 text-gray-200 transition-colors duration-150" />
                   ) : (
                     <MoonIcon className="h-5 w-5 text-gray-800 transition-colors duration-150" />
@@ -151,12 +153,12 @@ const Navigation = () => {
                   ))}
                   <button
                     onClick={() => {
-                      setTheme(theme === 'dark' ? 'light' : 'dark');
+                      setTheme(isDark ? 'light' : 'dark');
                       setIsMobileMenuOpen(false);
                     }}
                     className="flex items-center px-4 py-3 text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-150 font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
                   >
-                    {theme === 'dark' ? (
+                    {isDark ? (
                       <>
                         <SunIcon className="h-5 w-5 mr-2" />
                         Light Mode
