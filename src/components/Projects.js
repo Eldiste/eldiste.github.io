@@ -27,7 +27,7 @@ const Projects = () => {
       id: 'rtype',
       title: t('projects.rtype.title'),
       description: t('projects.rtype.description'),
-      image: '/rtype.png',
+      image: '/r-type.png',
       technologies: ['C++', 'SFML', 'CMake', 'Game Development', 'Networking'],
       link: 'https://github.com/eldiste/R-Type'
     },
@@ -35,7 +35,7 @@ const Projects = () => {
       id: 'neural',
       title: t('projects.neural.title'),
       description: t('projects.neural.description'),
-      image: '/neural_network.png',
+      image: '/Chess-Analyzer.webp',
       technologies: ['Python', 'Neural Networks', 'Machine Learning', 'Chess Analysis'],
       link: 'https://github.com/eldiste/Neural-Network'
     },

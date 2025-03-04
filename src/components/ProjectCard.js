@@ -79,20 +79,20 @@ const ProjectCard = ({ title, description, image, technologies, link }) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setIsModalOpen(false)}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm overflow-y-auto"
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm"
           >
             <motion.div
               initial={{ scale: 0.95, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-3xl mx-auto my-4 bg-white dark:bg-gray-900 rounded-2xl shadow-2xl overflow-hidden"
+              className="relative w-full max-w-3xl mx-auto bg-white dark:bg-gray-900 rounded-2xl shadow-2xl overflow-hidden"
             >
-              <div className="relative aspect-[2/1] sm:aspect-[2.2/1]">
+              <div className="relative">
                 <img
                   src={image}
                   alt={title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-auto"
                 />
                 <button
                   onClick={() => setIsModalOpen(false)}
