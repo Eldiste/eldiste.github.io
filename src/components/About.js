@@ -1,18 +1,21 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const About = () => {
+  const { t } = useTranslation();
+  
   const skills = [
     { 
-      category: 'Programming Languages', 
+      category: t('about.skills.languages'), 
       items: ['C', 'C++', 'Python', 'JavaScript', 'MySQL'] 
     },
     { 
-      category: 'Web & Mobile Development', 
+      category: t('about.skills.web'), 
       items: ['React', 'Flutter', 'Node.js', 'HTML/CSS'] 
     },
     { 
-      category: 'Tools & DevOps', 
+      category: t('about.skills.tools'), 
       items: ['Git', 'CI/CD', 'Docker', 'Linux', 'Unix', 'Azure'] 
     },
   ];
@@ -28,10 +31,10 @@ const About = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-200 bg-clip-text text-transparent">
-            About Me
+            {t('about.title')}
           </h2>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            A passionate software engineering student with a strong foundation in system programming and web development.
+            {t('about.description')}
           </p>
         </motion.div>
 
@@ -45,10 +48,10 @@ const About = () => {
           >
             <div className="prose prose-lg dark:prose-invert">
               <p className="text-gray-600 dark:text-gray-400">
-                Currently pursuing my third year at Epitech Lyon, I'm deeply immersed in mastering both low-level system programming and modern web technologies. My journey at Epitech has equipped me with strong problem-solving skills and a practical approach to software development.
+                {t('about.paragraph1')}
               </p>
               <p className="text-gray-600 dark:text-gray-400">
-                Through intensive project-based learning, I've developed expertise in C/C++ programming, Unix systems, and web development. I'm particularly interested in building robust applications that combine efficient system-level operations with elegant user interfaces.
+                {t('about.paragraph2')}
               </p>
             </div>
 

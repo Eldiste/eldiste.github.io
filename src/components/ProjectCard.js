@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const ProjectCard = ({ title, description, image, technologies, link }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { t } = useTranslation();
 
   return (
     <>
@@ -52,7 +54,7 @@ const ProjectCard = ({ title, description, image, technologies, link }) => {
             onClick={(e) => e.stopPropagation()}
             className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-600 to-blue-500 text-white hover:from-blue-700 hover:to-blue-600 transition-all duration-200 shadow-sm hover:shadow-md"
           >
-            View Project
+            {t('projects.viewProject')}
             <svg
               className="w-4 h-4 ml-2"
               fill="none"
@@ -122,7 +124,7 @@ const ProjectCard = ({ title, description, image, technologies, link }) => {
 
                 <div className="mb-3 sm:mb-4">
                   <h3 className="text-sm sm:text-base font-semibold mb-2 text-gray-800 dark:text-gray-200">
-                    Technologies Used
+                    {t('projects.technologies')}
                   </h3>
                   <div className="flex flex-wrap gap-1.5 sm:gap-2">
                     {technologies.map((tech, index) => (
@@ -145,7 +147,7 @@ const ProjectCard = ({ title, description, image, technologies, link }) => {
                     rel="noopener noreferrer"
                     className="inline-flex items-center px-4 py-1.5 sm:px-5 sm:py-2 rounded-full bg-gradient-to-r from-blue-600 to-blue-500 text-white hover:from-blue-700 hover:to-blue-600 transition-all duration-200 shadow-md hover:shadow-lg text-sm sm:text-base"
                   >
-                    View on GitHub
+                    {t('projects.viewOnGithub')}
                     <svg
                       className="w-3.5 h-3.5 sm:w-4 sm:h-4 ml-1.5 sm:ml-2"
                       fill="none"

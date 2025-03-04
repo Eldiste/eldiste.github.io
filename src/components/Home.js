@@ -2,10 +2,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
 import { useTheme } from 'next-themes';
+import { useTranslation } from 'react-i18next';
 
 const Home = () => {
   const { resolvedTheme } = useTheme();
   const isDark = resolvedTheme === 'dark';
+  const { t } = useTranslation();
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
@@ -57,10 +59,10 @@ const Home = () => {
             />
           </motion.div>
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-200 transition-colors duration-150">
-            Matéo Lechantre
+            {t('home.title')}
           </h1>
           <h2 className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 font-light transition-colors duration-150">
-            Software Engineering Student at Epitech Lyon
+            {t('home.subtitle')}
           </h2>
           
           <motion.div
@@ -77,7 +79,7 @@ const Home = () => {
               duration={200}
               className="px-8 py-3 bg-gradient-to-r from-blue-600 to-blue-500 text-white rounded-full hover:from-blue-700 hover:to-blue-600 transition-all duration-150 cursor-pointer shadow-sm hover:shadow-md"
             >
-              View My Work
+              {t('home.viewWork')}
             </Link>
             <Link
               to="contact"
@@ -87,7 +89,7 @@ const Home = () => {
               duration={200}
               className="px-8 py-3 border-2 border-gray-900 dark:border-white text-gray-900 dark:text-white rounded-full hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-150 cursor-pointer hover:shadow-md"
             >
-              Contact Me
+              {t('home.contactMe')}
             </Link>
           </motion.div>
         </motion.div>

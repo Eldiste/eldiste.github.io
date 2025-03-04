@@ -1,47 +1,56 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import ProjectCard from './ProjectCard';
+import { useTranslation } from 'react-i18next';
 
 const Projects = () => {
+  const { t } = useTranslation();
+
   const projects = [
     {
-      title: 'AREA',
-      description: "A web-based automation platform inspired by IFTTT/Zapier, built with FastAPI, Redis, and PostgreSQL. Features integrations with GitHub, Microsoft, Google, and Spotify services, enabling users to create custom automation workflows through Actions, Reactions, and Triggers.",
+      id: 'area',
+      title: t('projects.area.title'),
+      description: t('projects.area.description'),
       image: '/area.png',
       technologies: ['FastAPI', 'Redis', 'PostgreSQL', 'Docker', 'Flutter', 'Python'],
       link: 'https://github.com/eldiste/AREA'
     },
     {
-      title: 'Zappy',
-      description: "A multiplayer game featuring AI-controlled players competing for resources on a virtual planet. Built with a client-server architecture, real-time visualization, and strategic AI decision-making algorithms.",
+      id: 'zappy',
+      title: t('projects.zappy.title'),
+      description: t('projects.zappy.description'),
       image: '/zappy.png',
       technologies: ['C', 'C++', 'SFML', 'AI', 'Networking'],
       link: 'https://github.com/eldiste/ZAPPY'
     },
     {
-      title: 'R-Type',
-      description: "A recreation of the classic R-Type shoot 'em up game with a custom-built networked game engine. Features cross-platform multiplayer, SFML-based rendering, modular architecture, and customizable settings for resolution and FPS.",
+      id: 'rtype',
+      title: t('projects.rtype.title'),
+      description: t('projects.rtype.description'),
       image: '/rtype.png',
       technologies: ['C++', 'SFML', 'CMake', 'Game Development', 'Networking'],
       link: 'https://github.com/eldiste/R-Type'
     },
     {
-      title: 'Neural Network Chess Analyzer',
-      description: "A sophisticated neural network implementation built from scratch to analyze chess positions and classify them into different states (checkmate, check, stalemate, or normal position). Features custom network architecture, flexible configuration, and comprehensive training pipeline.",
+      id: 'neural',
+      title: t('projects.neural.title'),
+      description: t('projects.neural.description'),
       image: '/neural_network.png',
       technologies: ['Python', 'Neural Networks', 'Machine Learning', 'Chess Analysis'],
       link: 'https://github.com/eldiste/Neural-Network'
     },
     {
-      title: '42sh',
-      description: "A Unix command interpreter developed in C, featuring process management, pipes, and current directory management. This project demonstrates advanced system programming concepts.",
+      id: '42sh',
+      title: t('projects.42sh.title'),
+      description: t('projects.42sh.description'),
       image: '/42sh.png',
       technologies: ['C', 'Unix', 'Shell Scripting'],
       link: 'https://github.com/eldiste/42sh'
     },
     {
-      title: 'My RPG',
-      description: "An immersive RPG game built with C and CSFML, featuring an interactive world, playable characters, quests, and combat mechanics.",
+      id: 'rpg',
+      title: t('projects.rpg.title'),
+      description: t('projects.rpg.description'),
       image: '/my_rpg.png',
       technologies: ['C', 'CSFML', 'Game Development'],
       link: 'https://github.com/eldiste/my_rpg'
@@ -69,10 +78,10 @@ const Projects = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-200 bg-clip-text text-transparent transition-colors duration-150">
-            Featured Projects
+            {t('projects.title')}
           </h2>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto transition-colors duration-150">
-            Here are some of my recent projects that showcase my skills and experience in software development.
+            {t('projects.subtitle')}
           </p>
         </motion.div>
 
@@ -83,8 +92,8 @@ const Projects = () => {
           viewport={{ once: true }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {projects.map((project, index) => (
-            <ProjectCard key={index} {...project} />
+          {projects.map((project) => (
+            <ProjectCard key={project.id} {...project} />
           ))}
         </motion.div>
       </div>

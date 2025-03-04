@@ -3,12 +3,15 @@ import { Link } from 'react-scroll';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from 'next-themes';
 import { SunIcon, MoonIcon } from '@heroicons/react/24/outline';
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     setMounted(true);
@@ -20,10 +23,10 @@ const Navigation = () => {
   }, []);
 
   const navItems = [
-    { name: 'Home', to: 'home' },
-    { name: 'About', to: 'about' },
-    { name: 'Projects', to: 'projects' },
-    { name: 'Contact', to: 'contact' },
+    { name: t('nav.home'), to: 'home' },
+    { name: t('nav.about'), to: 'about' },
+    { name: t('nav.projects'), to: 'projects' },
+    { name: t('nav.contact'), to: 'contact' },
   ];
 
   if (!mounted) return null;
@@ -66,7 +69,7 @@ const Navigation = () => {
               </Link>
             </motion.div>
 
-            <div className="hidden md:block">
+            <div className="hidden md:flex md:items-center md:space-x-4">
               <div className="flex items-center space-x-8">
                 {navItems.map((item) => (
                   <Link
@@ -81,6 +84,7 @@ const Navigation = () => {
                     {item.name}
                   </Link>
                 ))}
+                <LanguageSwitcher />
                 <button
                   onClick={() => setTheme(isDark ? 'light' : 'dark')}
                   className="p-2 rounded-full hover:bg-gray-100/80 dark:hover:bg-gray-800/80 transition-colors duration-150"
@@ -121,10 +125,10 @@ const Navigation = () => {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.2 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setIsMobileMenuOpen(false)}
             className="fixed inset-0 z-40 md:hidden"
           >
             <div className="fixed inset-0 bg-black/20 dark:bg-black/40 backdrop-blur-sm" onClick={() => setIsMobileMenuOpen(false)} />
@@ -151,6 +155,9 @@ const Navigation = () => {
                       {item.name}
                     </Link>
                   ))}
+                  <div className="px-4 py-3">
+                    <LanguageSwitcher />
+                  </div>
                   <button
                     onClick={() => {
                       setTheme(isDark ? 'light' : 'dark');
@@ -161,12 +168,12 @@ const Navigation = () => {
                     {isDark ? (
                       <>
                         <SunIcon className="h-5 w-5 mr-2" />
-                        Light Mode
+                        {t('theme.light')}
                       </>
                     ) : (
                       <>
                         <MoonIcon className="h-5 w-5 mr-2" />
-                        Dark Mode
+                        {t('theme.dark')}
                       </>
                     )}
                   </button>
