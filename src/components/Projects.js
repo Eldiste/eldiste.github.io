@@ -36,7 +36,7 @@ const Projects = () => {
       title: t('projects.neural.title'),
       description: t('projects.neural.description'),
       image: '/Chess-Analyzer.webp',
-      technologies: ['Python', 'Neural Networks', 'Machine Learning', 'Chess Analysis'],
+      technologies: ['Python', 'AI', 'Neural Networks', 'Machine Learning', 'Chess Analysis'],
       link: 'https://github.com/eldiste/Neural-Network'
     },
     {

@@ -8,11 +8,11 @@ const About = () => {
   const skills = [
     { 
       category: t('about.skills.languages'), 
-      items: ['C', 'C++', 'Python', 'JavaScript', 'MySQL'] 
+      items: ['C', 'C++', 'Python', 'JavaScript'] 
     },
     { 
       category: t('about.skills.web'), 
-      items: ['React', 'Flutter', 'Node.js', 'HTML/CSS'] 
+      items: ['React', 'Flutter', 'Node.js', 'HTML/CSS', 'MySQL'] 
     },
     { 
       category: t('about.skills.tools'), 
